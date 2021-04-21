@@ -1,19 +1,28 @@
 import React, { FC } from 'react'
+import useClassName from '../../hooks/useClassName'
 
 interface ICardProps {
-    title: string
+  title: string
+  type?: 'block' | 'inline'
 }
 
 const Card: FC<ICardProps> = (props) => {
-    
-    return (
-      <dl className="cv-card">
-        <dt>
-          <h3>{props.title}</h3>
-        </dt>
-        <dd>{props.children}</dd>
-      </dl>
-    )
+  const { title, children, type } = props
+
+  const classes = useClassName('cv-card', type)
+  
+  return (
+    <dl className={classes}>
+      <dt>
+        <h3>{title}</h3>
+      </dt>
+      <dd>{children}</dd>
+    </dl>
+  )
+}
+
+Card.defaultProps = {
+  type: 'block',
 }
 
 export default Card

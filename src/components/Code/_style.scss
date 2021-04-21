@@ -1,0 +1,46 @@
+.cv-code {
+  position: relative;
+  code {
+    padding: 1rem;
+  }
+  pre {
+    margin-bottom: 0;
+  }
+  &.hidden {
+    code {
+        height: 0;
+        visibility: hidden;
+    }
+    pre{
+        height: 0;
+    }
+  }
+  &-control-btn {
+    color: #999;
+    border: none;
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    background-color: transparent;
+    &:hover{
+        color: #666;
+    }
+    &:before,
+    &:after{
+        content: '';
+        display: block;
+        width: 45%;
+        height: 1px;
+        top: 10px;
+        position: absolute;
+        background-color: #f1f1f1;        
+    }
+    
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}

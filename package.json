@@ -28,7 +28,7 @@
       "react-app/jest"
     ],
     "rules": {
-      "jsx-a11y/anchor-is-valid":"off"
+      "jsx-a11y/anchor-is-valid": "off"
     }
   },
   "browserslist": {
@@ -44,6 +44,9 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^5.0.0"
+    "@types/react-highlight": "^0.12.2",
+    "node-sass": "^5.0.0",
+    "react-highlight": "^0.14.0",
+    "react-markdown": "^6.0.0"
   }
 }

@@ -1,16 +1,20 @@
-.cv-card{
-    padding: 10px;
-    display: inline-block;
-    box-shadow: 0 0 10px #ddd;
-    margin: 20px;
-    h3{
-        margin: 0;
-        color: #666;
-        padding: 10px 20px;
-        border-bottom: 1px solid #ddd;
-    }
-    dd{
-        margin: 0;
-        padding: 20px;
-    }
+.cv-card {
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 0 10px #ddd;
+  background-color: #fff;
+  flex: 1;
+  &.inline {
+    flex: auto;
+  }
+  h3 {
+    margin: 0;
+    color: #666;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  dd {
+    margin: 0;
+    padding: 20px 20px 0;
+  }
 }

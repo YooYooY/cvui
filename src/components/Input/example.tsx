@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function example() {
+export default function Example() {
     return (
         <div>
             input
