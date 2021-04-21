@@ -16,7 +16,7 @@ function importAll(r: any) {
   })
 }
 
-importAll((require as any).context('../components', true, /example\.(tsx)$/))
+importAll((require as any).context('../packages', true, /example\.(tsx)$/))
 
 const getHsah = () => window.location.hash.toLowerCase().replace('#/', '')
 
