@@ -1,0 +1,33 @@
+.cv-table {
+  padding: 30px 0;
+  & > table {
+    border-spacing: 0;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $border-color;
+    thead,
+    tbody {
+      width: 100%;
+    }
+    td {
+      border: 1px solid $border-color;
+    }
+    thead tr {
+      color: $gray-800;
+      background-color: $gray-100;
+      td {
+        padding: 5px 10px;
+      }
+    }
+    tbody tr {
+      color: #666;
+      td {
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+      &:nth-child(even) {
+        background-color: #fdfdfd;
+      }
+    }
+  }
+}
