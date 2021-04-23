@@ -41,11 +41,17 @@ nav{
     }
 }
 
-.cv-exapmle{
+.cv-example{
     display: flex;
     flex-wrap: wrap;
     background-color: #f9f9f9;
     padding-bottom: 20px;
     margin-bottom: 20px;
     box-shadow: inset 0 0 5px #eee;
+}
+
+.cv-example-input{
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
 }

@@ -1,0 +1,22 @@
+.cv-icon {
+    @include statusMixin(icon){
+        color:$value
+    }
+}
+
+.cv-example-icon{
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    p{
+        margin: 0;
+        margin-top: 5px;
+        color: #999;
+        font-size: 12px;
+        color: $primary;
+        user-select: all;
+    }
+}

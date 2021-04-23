@@ -1,0 +1,68 @@
+.cv-alert {
+  padding: $spacer;
+  position: relative;
+  transition: 0.3s;
+  border-radius: $border-radius;
+
+  &-enter {
+    display: block;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  &-enter-active {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  &-enter-done {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  &-exit {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  &-exit-active {
+    opacity: 0;
+    height: 0 !important;
+    transform: scaleY(0);
+  }
+  &-exit-done {
+    display: none;
+  }
+
+  &-hidden {
+    display: none;
+  }
+
+  &-title {
+    margin: 0;
+    font-size: $font-size-base;
+  }
+
+  &-close-btn {
+    right: $spacer;
+    top: $spacer;
+    cursor: pointer;
+    position: absolute;
+    &:hover {
+      opacity: 0.9;
+    }
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  @include statusMixin(alert) {
+    color: #fff;
+    background-color: $value;
+    border: 1px solid darken($value, 8%);
+    &:active {
+      background-color: darken($value, 2%);
+    }
+  }
+}

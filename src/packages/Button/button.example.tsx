@@ -6,7 +6,7 @@ import Code from '../../components/Code/code'
 const Example = () => {
   return (
     <>
-      <div className="cv-exapmle">
+      <div className="cv-example">
         <Card title="默认 Button" type="inline">
           <Button onClick={() => alert('clicked')}> default button </Button>
           <Code>{`<Button onClick={() => alert('clicked')}> default button </Button>`}</Code>

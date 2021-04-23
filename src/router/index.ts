@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react'
 
 type ImportType = Record<
   string,
-  { default: Function & { defaultProps: Record<string, any>[] } }
+  Function & { exampleName: string; defaultProps: Record<string, any>[] }
 >
 
 export type RouterReturnType = ReturnType<typeof useHashRouter>
@@ -12,7 +12,7 @@ const cache: ImportType = {}
 function importAll(r: any) {
   r.keys().forEach((key: string) => {
     const name = key.toLowerCase().split('/')[1]
-    cache[name] = r(key)
+    cache[name] = r(key).default
   })
 }
 
@@ -24,7 +24,7 @@ function useHashRouter() {
   const [route, setRoute] = useState(() => getHsah())
   const [routes] = useState(() => Object.keys(cache))
 
-  const module = useMemo(() => {
+  const module = useMemo(() => {        
     return cache[route]
   }, [route])
 

@@ -3,17 +3,17 @@
   margin: 20px 20px 0;
   box-shadow: 0 0 10px #ddd;
   background-color: #fff;
-  flex: 1;
+  width: 100%;
   &.inline {
     flex: auto;
   }
-  h3 {
+  &>dt>h3 {
     margin: 0;
     color: #666;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
   }
-  dd {
+  &>dd {
     margin: 0;
     padding: 20px 20px 0;
   }

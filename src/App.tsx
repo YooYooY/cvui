@@ -4,28 +4,34 @@ import './App.scss'
 import Table from './components/Table/table'
 
 function App() {
-  const { push, route, module, routes } = useHashRouter()
+  const { push, route, module:Component, routes } = useHashRouter()
+  
   const classes = useCallback(
     (r) => `nav-link ${route === r ? 'link-active' : ''}`,
     [route]
   )
-
-  const component = module.default()
-  const { defaultProps } = module.default
-
+  
+  const nav = (
+    <nav>
+      {routes.map((r) => (
+        <a key={r} onClick={() => push(r)} className={classes(r)}>
+          {r}
+        </a>
+      ))}
+    </nav>
+  )
+  
+  if (!Component) return nav;
+  
+  const { defaultProps } = Component
+    
   return (
     <div className="App">
-      <nav>
-        {routes.map((r) => (
-          <a key={r} onClick={() => push(r)} className={classes(r)}>
-            {r}
-          </a>
-        ))}
-      </nav>
+      {nav}
       <main>
         <h1>{route}</h1>
         <div className="container">
-          {component ? component : '404 Not Found'}
+          {Component ? <Component /> : '404 Not Found'}
           {defaultProps && <Table data={defaultProps} />}
         </div>
       </main>
