@@ -3,11 +3,12 @@ import Highlight from 'react-highlight'
 import useClassName from '../../hooks/useClassName'
 
 export interface ICodeProps {
-    type?: string
+    type?: string,
+    open?: boolean
 }
 
 const Code: FC<ICodeProps> = (props) => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(props.open)
 
   const classes = useClassName('cv-code', { hidden: !visible })
     
@@ -25,7 +26,7 @@ const Code: FC<ICodeProps> = (props) => {
 }
 
 Code.defaultProps = {
-    type:"html"
+    type:"html",
 }
 
 export default Code

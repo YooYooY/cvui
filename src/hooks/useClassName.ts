@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 
 const useClassName = (
   ...args: Array<
-    string | undefined | Record<string, string | boolean | number | undefined>
+    string | undefined | Record<string, any>
   >
 ) => {
   return useMemo(() => {
