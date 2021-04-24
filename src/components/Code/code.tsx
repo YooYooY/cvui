@@ -26,7 +26,7 @@ const Code: FC<ICodeProps> = (props) => {
 }
 
 Code.defaultProps = {
-    type:"html",
+    type:"html"
 }
 
 export default Code

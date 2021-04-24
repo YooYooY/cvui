@@ -1,19 +1,25 @@
 .cv-card {
-  padding: 10px;
-  margin: 20px 20px 0;
-  box-shadow: 0 0 10px #ddd;
-  background-color: #fff;
-  width: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   &.inline {
-    flex: auto;
+    overflow: scroll;
+    flex: 0 0 50%;
   }
-  &>dt>h3 {
+  & > dl {
+    margin: 0;
+    height: 100%;
+    padding: 10px;
+    box-shadow: 0 0 10px #ddd;
+    background-color: #fff;
+  }
+  & > dl > dt > h3 {
     margin: 0;
     color: #666;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
   }
-  &>dd {
+  & > dl > dd {
     margin: 0;
     padding: 20px 20px 0;
   }

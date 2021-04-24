@@ -1,0 +1,64 @@
+.cv-progress {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+  box-sizing: border-box;
+  &-stripe-active .cv-progress-inner {
+    animation: panoramic 80s linear infinite;
+  }
+  @include statusMixin(progress) {
+    .cv-progress-outer {
+      color: $value;
+      background-color: lighten($value, 40);
+    }
+    .cv-progress-inner {
+      background-color: $value;
+
+      background-size: 18px 18px;
+    }
+    .cv-progress-text {
+      color: $value;
+    }
+    &.cv-progress-stripe .cv-progress-inner {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        lighten($value, 10) 25%,
+        $value 0,
+        $value 50%,
+        lighten($value, 10) 0,
+        lighten($value, 10) 75%,
+        $value 0
+      );
+    }
+  }
+
+  &-outer {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ddd;
+  }
+
+  &-inner {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    transition: transform 0.3s;
+  }
+
+  &-text {
+    width: 50px;
+    text-align: right;
+  }
+}
+
+@keyframes panoramic {
+  to {
+    background-position: 200% 0;
+  }
+}

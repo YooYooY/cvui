@@ -12,12 +12,14 @@ const Card: FC<ICardProps> = (props) => {
   const classes = useClassName('cv-card', type)
   
   return (
-    <dl className={classes}>
-      <dt>
-        <h3>{title}</h3>
-      </dt>
-      <dd>{children}</dd>
-    </dl>
+    <div className={classes}>
+      <dl>
+        <dt>
+          <h3>{title}</h3>
+        </dt>
+        <dd>{children}</dd>
+      </dl>
+    </div>
   )
 }
 
