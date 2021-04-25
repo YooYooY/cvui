@@ -1,0 +1,99 @@
+.cv-select {
+  z-index: 2;
+  position: relative;
+  &>.cv-input{
+    z-index: 2;
+    .cv-input-inner:hover:not(:disabled){
+      border-color: darken($primary, 2%);
+    }
+  }
+  &-list {
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    position: absolute;
+    margin-top: 8px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px #ddd;
+    transition: $transition-duration;
+    transform-origin: center 0;
+    padding: 0;
+  }
+  .cv-input-icon{
+      transition: transform $transition-duration;
+  }
+  &-visible {
+    .cv-input-icon {
+      transform: rotate(180deg);
+    }
+  }
+  
+  &-ani-enter{
+    opacity: 0;
+    transform: translateY(-10%) scaleY(.8);
+  }
+  &-ani-enter-active{
+    opacity: 0;
+    transform: translateY(-10%) scaleY(.8);
+  }
+  &-ani-enter-active{
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+  
+  &-ani-exit{
+    opacity: 1;
+     transform: translateY(0) scaleY(1);
+  }
+  &-ani-exit-active{
+    opacity: 0;
+    transform: translateY(-10%) scaleY(.8);
+  }
+  
+  &-item{
+    list-style: none;
+    padding: 10px;
+    color: #333;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    border-bottom: 1px solid #f7f7f7;
+    &:last-child{
+      border-bottom: none;
+    }
+    &-selected{
+      font-weight: 600;
+      color: $primary;
+    }
+    &-disabled{
+     cursor: not-allowed;
+    opacity: .5;
+    }
+    &:hover{
+      background-color: lighten($primary, 40%);
+    }
+  }
+  
+  &-tabs{
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    left: 0;
+    padding: 5px;
+    height: 100%;
+    align-items: center;
+    &-item{
+      color: $primary;
+      margin-right: 5px;
+      padding: 2px 5px;
+      border-radius: 3px;
+      border: 1px solid lighten($primary, 30%);
+      background-color: lighten($primary, 40%);
+    }
+  }
+  
+}

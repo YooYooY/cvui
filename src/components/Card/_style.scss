@@ -6,6 +6,9 @@
     overflow: scroll;
     flex: 0 0 50%;
   }
+  &.block{
+    flex: 1;
+  }
   & > dl {
     margin: 0;
     height: 100%;

@@ -4,6 +4,7 @@ import CSSTransition, {
 } from 'react-transition-group/CSSTransition'
 
 type AnimationName =
+  | 'fade-in'
   | 'zoom-in-top'
   | 'zoom-in-left'
   | 'zoom-in-bottom'
@@ -11,17 +12,30 @@ type AnimationName =
 
 interface TransitionBase {
   animation?: AnimationName
-  warapper?: boolean
+  wrapper?: boolean
+  classNames?: string
+  timeout?: number
+  unmountOnExit?: boolean
 }
 
-type TransitionProps = TransitionBase & CSSTransitionProps
+type TransitionProps = TransitionBase | CSSTransitionProps<HTMLElement>
 
 const Transition: React.FC<TransitionProps> = (props) => {
-  const { children, classNames, animation, wrapper, ...restProps } = props
-
+  const {
+    children,
+    classNames,
+    timeout = 30,
+    animation,
+    wrapper,
+    unmountOnExit,
+    ...restProps
+  } = props
+  
   return (
     <CSSTransition
       classNames={classNames ? classNames : animation}
+      timeout={timeout}
+      unmountOnExit={unmountOnExit}
       {...restProps}
     >
       {wrapper ? <div>{children}</div> : children}
@@ -30,8 +44,9 @@ const Transition: React.FC<TransitionProps> = (props) => {
 }
 
 Transition.defaultProps = {
-    unmountOnExit: true,
-    appear: true
+  animation: 'fade-in',
+  unmountOnExit: true,
+  timeout: 300,
 }
 
 export default Transition

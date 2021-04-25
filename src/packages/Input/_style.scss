@@ -79,12 +79,14 @@
       color: $input-placeholder-color;
       opacity: 1;
     }
-    &:disabled,
-    &[readonly] {
+    &:disabled{
       background-color: $input-disabled-bg;
       border-color: $input-disabled-border-color;
       opacity: 1;
       cursor: not-allowed;
+    }
+    &[readonly] {
+      cursor: pointer;
     }
   }
 

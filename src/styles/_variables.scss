@@ -30,6 +30,8 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
+$transition-duration: .3s;
+
 $theme-colors: 
 (
   "primary":    $primary,

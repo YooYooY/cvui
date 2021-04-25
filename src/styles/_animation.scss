@@ -1,0 +1,30 @@
+@include zoom-animation('top', scaleY(0), scaleY(1), center top);
+@include zoom-animation('left', scale(.45, .45), scale(1, 1), top left);
+@include zoom-animation('right', scale(.45, .45), scale(1, 1), top right);
+@include zoom-animation('bottom', scaleY(0), scaleY(1),  center bottom);
+
+
+.fade-in-enter{
+    display: block;
+    opacity: 0;
+}
+.fade-in-enter-active{
+    opacity: .5;
+    display: block;
+}
+.fade-in-enter-done{
+    display: block;
+    opacity: 1;
+}
+
+.fade-in-exit{
+    opacity: 1;
+    display: block;
+}
+.fade-in-exit-active{
+    opacity: .5;
+}
+.fade-in-exit-done{
+    opacity: 0;
+    display: none;
+}
