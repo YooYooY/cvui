@@ -1,25 +1,36 @@
-.cv-autocomplete {
+.cv-auto-complete {
+  position: relative;
+}
+
+.cv-suggestion-list {
+  list-style: none;
+  padding-left: 0;
+  white-space: nowrap;
+  position: absolute;
+  background-color: $white;
+  z-index: 100;
+  top: calc(100% + 8px);
+  left: 0;
+  border: $menu-border-width solid $menu-border-color;
+  box-shadow: $submenu-box-shadow;
+  width: 100%;
   &-loading {
-    color: $primary;
-    display: block;
-    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75px;
   }
-  &-list {
-    padding: 0;
-    & > li {
-      color: #999;
-      list-style: none;
-      padding: 10px;
-      cursor: pointer;
-      border-bottom: 1px solid #eee;
-      &:hover {
-        color: $primary;
-        background-color: lighten($color: $primary, $amount: 40%);
-      }
+  &-item {
+    padding: $menu-item-padding-y $menu-item-padding-x;
+    cursor: pointer;
+    transition: $menu-transition;
+    color: $body-color;
+    &:hover {
+      color: $menu-item-active-color !important;
     }
-    &-active {
-      color: $primary !important;
-      background-color: lighten($color: $primary, $amount: 45%);
-    }
+  }
+  .is-active {
+    background: $menu-item-active-color !important;
+    color: $white !important;
   }
 }

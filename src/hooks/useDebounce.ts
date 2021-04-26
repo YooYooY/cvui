@@ -2,12 +2,12 @@ import { useEffect, useState, useRef } from 'react'
 
 type callbackFn<T> = (debValue: T) => void
 
-const useDebounceValue = <T = string>(
+const useDebounce = <T = string>(
   debounceValue: T,
   delay: number,
   cb?: callbackFn<T>
 ) => {
-  const [value, setDeboundVal] = useState(() => debounceValue)
+  const [value, setDeboundVal] = useState<T>(() => debounceValue)
   const callbackFn = useRef<callbackFn<T>>()
 
   useEffect(() => {
@@ -20,14 +20,12 @@ const useDebounceValue = <T = string>(
       clearTimeout(timer)
     }
   }, [debounceValue, delay, cb])
-  
+
   useEffect(() => {
     callbackFn.current && callbackFn.current(value)
   }, [value, callbackFn])
 
-  return {
-    value,
-  }
+  return value
 }
 
-export default useDebounceValue
+export default useDebounce

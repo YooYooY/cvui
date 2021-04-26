@@ -29,6 +29,11 @@ const Input: React.FC<InputProps> = (props) => {
     'cv-input-group-prepend': !!prepend,
     'cv-input-group-append': !!append,
   })
+  
+  if("value" in props){
+    delete props.defaultValue;
+    restProps.value = props.value || '';
+  }
 
   return (
     <div className={classes} style={style}>

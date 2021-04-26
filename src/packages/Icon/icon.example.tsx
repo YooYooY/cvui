@@ -3,7 +3,7 @@ import Icon from './icon'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Markdown from '../../components/Markdown/markdown'
-import useDebounceValue from '../../hooks/useDebounce'
+import useDebounce from '../../hooks/useDebounce'
 
 library.add(fas)
 
@@ -71,7 +71,7 @@ const Example = () => {
     setSearchVal(() => value)
   }, [])
 
-  const { value } = useDebounceValue(searchVal, 500)
+  const value = useDebounce(searchVal, 500)
 
   return (
     <>

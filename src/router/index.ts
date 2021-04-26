@@ -10,10 +10,12 @@ export type RouterReturnType = ReturnType<typeof useHashRouter>
 const cache: ImportType = {}
 
 function importAll(r: any) {
-  r.keys().forEach((key: string) => {
-    const name = key.toLowerCase().split('/')[1]
-    cache[name] = r(key).default
-  })
+  r.keys()
+    .filter((k: string) => !k.includes('_'))
+    .forEach((key: string) => {
+      const name = key.toLowerCase().split('/')[1];      
+      cache[name] = r(key).default
+    })
 }
 
 importAll((require as any).context('../packages', true, /example\.(tsx)$/))
@@ -24,7 +26,7 @@ function useHashRouter() {
   const [route, setRoute] = useState(() => getHsah())
   const [routes] = useState(() => Object.keys(cache))
 
-  const module = useMemo(() => {        
+  const module = useMemo(() => {
     return cache[route]
   }, [route])
 

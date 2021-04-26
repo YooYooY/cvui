@@ -10,7 +10,7 @@ function App() {
     (r) => `nav-link ${route === r ? 'link-active' : ''}`,
     [route]
   )
-  
+    
   const nav = (
     <nav>
       {routes.map((r) => (

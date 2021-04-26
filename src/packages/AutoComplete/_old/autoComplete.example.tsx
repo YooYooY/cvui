@@ -1,7 +1,7 @@
 import React from 'react'
-import Card from '../../components/Card/card'
+import Card from '../../../components/Card/card'
+import { getDelay } from '../../../utils'
 import AutoComplete, { DataSourceType } from './autoComplete'
-import { getDelay } from '../../utils'
 
 const lakers = [
   'bradley',
