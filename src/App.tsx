@@ -21,7 +21,12 @@ function App() {
     </nav>
   )
   
-  if (!Component) return nav;
+  if (!Component) return (
+    <div className="home-nav">
+      <h1>CVUI</h1>
+      {nav}
+    </div>
+  )
   
   const { defaultProps } = Component
     

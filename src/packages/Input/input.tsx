@@ -20,20 +20,7 @@ export interface InputProps
 }
 
 const Input: React.FC<InputProps> = (props) => {
-  let {
-    disabled,
-    size,
-    icon,
-    prepend,
-    append,
-    style,
-    onChange,
-    ...restProps
-  } = props
-
-  if (!onChange) {
-    onChange = () => {}
-  }
+  let { disabled, size, icon, prepend, append, style, ...restProps } = props
 
   const classes = useClassName('cv-input', {
     [`cv-input-size-${size}`]: size,
@@ -51,12 +38,7 @@ const Input: React.FC<InputProps> = (props) => {
           <Icon icon={icon} title={`title-${icon}`} />
         </div>
       )}
-      <input
-        className="cv-input-inner"
-        onChange={onChange}
-        disabled={disabled}
-        {...restProps}
-      />
+      <input className="cv-input-inner" disabled={disabled} {...restProps} />
       {append && <div className="cv-input-append">{append}</div>}
     </div>
   )

@@ -1,60 +1,118 @@
 // config
-@import "./styles/variables";
+@import './styles/variables';
 
-body{
-    margin:0;
+body {
+  margin: 0;
 }
 
-.App{
+.App {
   min-height: 100vh;
-  display: flex; 
-  main{
-      flex:1;
-      padding: 0 20px;
-      &>h1{
-          color: $primary;
-          border-bottom: 1px solid #ddd;
-      }
+  display: flex;
+  main {
+    flex: 1;
+    padding: 0 20px;
+    & > h1 {
+      color: $primary;
+      border-bottom: 1px solid #ddd;
+    }
   }
 }
 
-nav{
-    top: 0;
-    left: 0;
-    height: 100vh;
+.home-nav {
+  & > h1 {
+    margin: 20px auto;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 50%;
+    line-height: 250px;
+    color: $primary;
+    animation: breath 10s infinite linear;
+  }
+  & > nav {
     display: flex;
-    position: sticky;
-    flex-direction: column;
-    background-color: #f9f9f9;
-    box-shadow: inset 0 0 10px #ddd;
-    a.nav-link{
-        cursor: pointer;
-        padding: 10px 20px;
-        border-bottom: 1px solid #eee;
-        &.link-active{
-            color: #fff;
-            background-color: lighten($primary, 3%);
-            &:hover{
-                color: #fff;
-            }
-        }
-        &:hover{
-            opacity: .89;
-        }
-    }
-}
-
-.cv-example{
-    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: revert;
     flex-wrap: wrap;
-    background-color: #f9f9f9;
-    padding: 0 10px 20px;
-    margin-bottom: 20px;
-    box-shadow: inset 0 0 5px #eee;
+    height: 150px;
+    text-align: center;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: none;
+    & > a {
+      flex: 0 0 25%;
+      cursor: pointer;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: lighten($primary, 2%);
+      margin: 10px;
+      box-shadow: 0 0 5px #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.2s;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: $primary;
+        box-shadow: 0 0 10px #ddd;
+      }
+    }
+  }
 }
 
-.cv-example-input{
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin: 20px 0;
+nav {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  position: sticky;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 0 10px #ddd;
+  a.nav-link {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    &.link-active {
+      color: #fff;
+      background-color: lighten($primary, 3%);
+      &:hover {
+        color: #fff;
+      }
+    }
+    &:hover {
+      opacity: 0.89;
+    }
+  }
+}
+
+.cv-example {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  padding: 0 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 5px #eee;
+  max-width: 800px;
+}
+
+.cv-example-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+@keyframes breath {
+  0% {
+    box-shadow: 0 0 8px lighten($primary, 10%);
+  }
+  50% {
+    box-shadow: 0 0 15px $primary;
+  }
+  100% {
+    box-shadow: 0 0 8px lighten($primary, 10%);
+  }
 }

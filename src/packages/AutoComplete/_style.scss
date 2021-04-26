@@ -1,0 +1,25 @@
+.cv-autocomplete {
+  &-loading {
+    color: $primary;
+    display: block;
+    margin: 20px auto;
+  }
+  &-list {
+    padding: 0;
+    & > li {
+      color: #999;
+      list-style: none;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      &:hover {
+        color: $primary;
+        background-color: lighten($color: $primary, $amount: 40%);
+      }
+    }
+    &-active {
+      color: $primary !important;
+      background-color: lighten($color: $primary, $amount: 45%);
+    }
+  }
+}
