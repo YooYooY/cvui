@@ -18,7 +18,7 @@ interface TransitionBase {
   unmountOnExit?: boolean
 }
 
-type TransitionProps = TransitionBase | CSSTransitionProps<HTMLElement>
+type TransitionProps = TransitionBase & CSSTransitionProps<HTMLElement>
 
 const Transition: React.FC<TransitionProps> = (props) => {
   const {
@@ -30,7 +30,7 @@ const Transition: React.FC<TransitionProps> = (props) => {
     unmountOnExit,
     ...restProps
   } = props
-  
+    
   return (
     <CSSTransition
       classNames={classNames ? classNames : animation}

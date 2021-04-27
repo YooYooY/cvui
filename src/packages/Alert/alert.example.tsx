@@ -7,12 +7,12 @@ const Example = () => {
   return (
     <>
       <div className="cv-example">
-        <Card title="默认 Alert">
+        <Card title="默认 Alert" type="inline">
           <Alert title="提示标题" />
           <Code>{`<Alert title="this is alert!" />`}</Code>
         </Card>
 
-        <Card title="副标题 Alert">
+        <Card title="副标题 Alert" type="inline">
           <Alert
             title="提示标题"
             type="primary"
@@ -28,7 +28,7 @@ const Example = () => {
 />`}</Code>
         </Card>
 
-        <Card title="状态 Alert">
+        <Card title="状态 Alert" type="inline">
           <Alert title="提示标题" type="primary" />
           <Alert title="提示标题" type="danger" />
           <Alert title="提示标题" type="success" />
