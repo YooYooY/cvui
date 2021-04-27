@@ -9,7 +9,7 @@ interface BaseButtonProps {
   disabled: boolean
   size: ButtonSize
   btnType: ButtonType
-  children: React.ReactChild
+  children: any
   href: string
 }
 

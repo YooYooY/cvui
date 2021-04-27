@@ -13,6 +13,7 @@ function App() {
     
   const nav = (
     <nav>
+      <a className="home-link" onClick={() => push("")}>cv</a>
       {routes.map((r) => (
         <a key={r} onClick={() => push(r)} className={classes(r)}>
           {r}
