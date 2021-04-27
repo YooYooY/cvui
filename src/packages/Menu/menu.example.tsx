@@ -12,7 +12,7 @@ const menuDefaultProps = [
     属性: 'defaultIndex',
     类型: 'string | number',
     required: '-',
-    默认值: 'false',
+    默认值: '-',
     描述: '默认选中',
   },
   {
@@ -57,7 +57,7 @@ const menuItemDefaultProps = [
     属性: 'index',
     类型: 'string | number',
     required: '-',
-    默认值: 'false',
+    默认值: '-',
     描述: '索引',
   },
   {

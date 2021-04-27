@@ -1,0 +1,48 @@
+.cv-tabs {
+  &-card {
+    .cv-tabs-title {
+      &-item {
+        margin-bottom: -1px;
+        background-color: #fff;
+        border-bottom: $menu-border-width solid $menu-border-color;
+      }
+      .cv-tabs-active {
+        border: $menu-border-width solid $menu-border-color;
+        border-bottom: none;
+        border-radius: $btn-border-radius $btn-border-radius 0 0;
+      }
+    }
+  }
+
+  &-title {
+    display: flex;
+    border-bottom: $menu-border-width solid $menu-border-color;
+    &-item {
+      cursor: pointer;
+      padding: $menu-item-padding-y $menu-item-padding-x;
+      border-bottom: $menu-item-active-border-width solid transparent;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &-disabled {
+      color: #ddd;
+      cursor: not-allowed;
+      &:hover {
+        color: #ddd;
+      }
+    }
+    .cv-tabs-active {
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+  }
+  &-body {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.cv-tabsItem {
+  padding: $menu-item-padding-y $menu-item-padding-x;
+}
