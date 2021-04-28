@@ -2,12 +2,10 @@ language: node_js
 node_js:
   - 12
 cache:
-  npm: false
   directories:
-    - $HOME/.npm
+  - node_modules
 env:
   - CI=true
-  - BUILD_PATH='./docs'
 script:
   - npm run build
 deploy:
